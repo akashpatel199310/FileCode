@@ -1,0 +1,17 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class JulianDateConverter {
+
+    public static String convertToJulianDate(LocalDate date) {
+        int year = date.getYear();
+        int dayOfYear = date.getDayOfYear();
+
+        String julianDate = String.format("%03d%03d", year, dayOfYear);
+        return julianDate;
+    }
+  public static void main(String[] args) {
+        LocalDate inputDate = LocalDate.of(2023, 6, 30);
+        String julianDate = convertToJulianDate(inputDate);
+        System.out.println(julianDate);
+    }
